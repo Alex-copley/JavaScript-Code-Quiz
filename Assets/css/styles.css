@@ -1,0 +1,166 @@
+/* for each option that has display: block; change display from block to none in js or the css file to hide the content */
+
+/* Remove this div entirely to remove the red borders around everything */
+div {
+  border: 1px solid red;
+}
+
+body {
+  height: 100vh;
+}
+
+.whole-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.center-body {
+  margin: 0 auto;
+  display: block;
+  jusify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  width: 600px;
+}
+
+h1 {
+  font-size: 200%;
+}
+
+/* change from display: block, to display: none; to remove this section. */
+#section-1 {
+  justify-content: center;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+a {
+  color: #4B0082;
+  text-decoration: none;
+}
+
+.goBack {
+  color: white;
+  text-decoration: none;
+}
+
+.btn {
+  background-color: #4B0082;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.btn:hover {
+  cursor: pointer;
+  transition: .1s ease-in-out 0s;
+  transform: scale(1.05);
+}
+/* change from display: block, to display: none; to remove this section. */
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.answers-btn button {
+  color: white;
+  display: block;
+  background-color: #4B0082;
+  border: none;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 3px;
+}
+
+.section-2-ptags {
+  font-size: 130%;
+  font-style: italic;
+  color: grey;
+  border-top: 4px solid lightgrey;
+}
+
+.section-2-ptag-margin {
+  margin-top: 2px;
+}
+/* change from display: block, to display: none; to remove this. */
+#correct{
+  display: none;
+}
+/* change from display: block, to display: none; to remove this.*/
+#wrong {
+  display: none;
+}
+/* change from display: block, to display: none; to remove this section. */
+
+.highscore-ol {
+  padding-left: 0;
+}
+
+.highscore-ol li {
+  list-style: none;
+  padding: 2px 0;
+}
+
+.highscore-ol li:nth-child(odd) {
+  background-color: rgba(75,0,130, .2);
+}
+/* change from display: block, to display: none; to remove these indivually */
+#highscore-1 {
+  display: block;
+}
+
+#highscore-2 {
+  display: block;
+}
+
+#highscore-3 {
+  display: block; 
+}
+
+#highscore-4 {
+  display: block;
+}
+
+#highscore-5 {
+  display: block;
+}
+
+#highscore-6 {
+  display: none;
+}
+
+#highscore-7 {
+  display: none;
+}
+
+#highscore-8 {
+  display: none;
+}
+
+#highscore-9 {
+  display: none;
+}
+
+#highscore-10 {
+  display: none;
+}
+
+#section-4 button {
+  margin-right: 10px;
+}
+/* change from display: block, to display: none; to remove these corner items. */
+.corner-div {
+  display: block;
+}
+
+.top-right {
+  margin: 0px;
+}
+
+div .inline {
+  float: right;
+}
