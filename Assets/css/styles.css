@@ -89,7 +89,9 @@ h2 {
   margin-top: 2px;
 }
 
-/* change from display: block, to display: none; to remove this section. */
+.score-holder {
+  display: flex;
+}
 
 .highscore-ol {
   padding-left: 0;
