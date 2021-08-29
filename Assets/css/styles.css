@@ -1,10 +1,5 @@
 /* for each option that has display: block; change display from block to none in js or the css file to hide the content */
 
-/* Remove this div entirely to remove the red borders around everything */
-div {
-  border: 1px solid red;
-}
-
 body {
   height: 100vh;
 }
@@ -76,7 +71,14 @@ h2 {
   padding: 3px;
 }
 
-.section-2-ptags {
+#correct {
+  font-size: 130%;
+  font-style: italic;
+  color: grey;
+  border-top: 4px solid lightgrey;
+}
+
+#wrong {
   font-size: 130%;
   font-style: italic;
   color: grey;
@@ -86,14 +88,7 @@ h2 {
 .section-2-ptag-margin {
   margin-top: 2px;
 }
-/* change from display: block, to display: none; to remove this. */
-#correct{
-  display: none;
-}
-/* change from display: block, to display: none; to remove this.*/
-#wrong {
-  display: none;
-}
+
 /* change from display: block, to display: none; to remove this section. */
 
 .highscore-ol {
