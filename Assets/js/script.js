@@ -92,3 +92,32 @@ function resetTimer() {
     secondsLeft = 60;
     timer.textContent = secondsLeft;
 }
+
+viewHighscores.addEventListener("click", viewHighscoresPage);
+
+function viewHighscoresPage() {
+    instructionPage.classList.add("hidden");
+    quizEndPage.classList.add("hidden");
+    answerCheck.classList.add("hidden");
+    questionContainer.classList.add("hidden");
+    viewHighscores.classList.add("hidden");
+    timerDiv.classList.add("hidden");
+
+    highscorePage.classList.remove("hidden");
+
+    resetTimer();
+    showHighscores();
+}
+
+goBackBtn.addEventListener("click", goBack);
+
+function goBack() {
+    highscorePage.classList.add("hidden");
+    questionContainer.classList.add("hidden");
+    quizEndPage.classList.add("hidden");
+    instructionPage.classList.remove("hidden");
+    timerDiv.classList.remove("hidden");
+    viewHighscores.classList.remove("hidden");
+
+    resetTimer();
+}
