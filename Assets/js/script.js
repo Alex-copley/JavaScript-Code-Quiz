@@ -121,3 +121,71 @@ function goBack() {
 
     resetTimer();
 }
+
+function questionLoop() {
+    if (currentIndex === questions.length) {
+        quizCompleted();
+    } else {
+        answerCheck.textContent = '';
+        currentQ = questions[currentIndex];
+        questionEl.textContent = questions[currentIndex].question;
+        answerOne.textContent = questions[currentIndex].choices[0];
+        answerTwo.textContent = questions[currentIndex].choices[1];
+        answerThree.textContent = questions[currentIndex].choices[2];
+        answerFour.textContent = questions[currentIndex].choices[3];
+    }
+    answerCheck.classList.add("hidden");
+    answerOne.disabled = false;
+    answerTwo.disabled = false;
+    answerThree.disabled = false;
+    answerFour.disabled = false;
+}
+
+answerOne.addEventListener("click", checkAnswer)
+answerTwo.addEventListener("click", checkAnswer)
+answerThree.addEventListener("click", checkAnswer)
+answerFour.addEventListener("click", checkAnswer)
+
+function checkAnswer(e) {
+    answerOne.disabled = true;
+    answerTwo.disabled = true;
+    answerThree.disabled = true;
+    answerFour.disabled = true;
+
+    e.stopPropagation();
+    console.log(currentIndex);
+    answerCheck.classList.remove("hidden");
+    if (currentQ.correctAnswer === e.target.innerText) {
+        answerCheck.textContent = "Correct!";
+        secondsLeft += 5;
+        setTimeout(function () {
+            currentIndex++;
+            questionLoop();
+        }, 1000)
+
+    } else {
+        answerCheck.textContent = "Wrong!";
+        if (secondsLeft > 10) {
+            secondsLeft -= 10;
+            setTimeout(function () {
+                currentIndex++;
+                questionLoop();
+            }, 1000)
+        } else {
+            // loseGameDisplay();
+            quizCompleted();
+        }
+    }
+}
+
+function quizCompleted() {
+    nameInput.value="";
+    answerCheck.classList.add("hidden");
+    questionContainer.classList.add('hidden');
+    highscorePage.classList.add("hidden");
+    quizEndPage.classList.remove('hidden');
+    clearInterval(timerInterval);
+    endGameScore.textContent = secondsLeft;
+    timer.textContent = secondsLeft;
+
+}
