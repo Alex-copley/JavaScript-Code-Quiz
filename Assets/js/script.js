@@ -6,3 +6,36 @@ var questionEl = document.getElementById("question");
 var nameInput = document.getElementById("initials");
 var timerDiv = document.getElementById("timer-div");
 var nameList = document.getElementById("nameList");
+
+
+
+var currentQ = '';
+var currentIndex = 0;
+
+var questions = [
+    {
+        question: 'In JavaScript, what is a block of statement?',
+        choices: ['a. Conditional block', 'b. block that combines a number of statements into a single compound statement', 'c. both conditional block and a single statement', 'd. block that contains a single statement'],
+        correctAnswer: 'b. block that combines a number of statements into a single compound statement'
+    },
+    {
+        question: 'When interpreter encounters an empty statements, what it will do:',
+        choices: ['a. Shows a warning', 'b. Prompts to complete the statement', 'c. Throws an error', 'd. Ignores the statements'],
+        correctAnswer: 'd. Ignores the statements'
+    },
+    {
+        question: 'The "function" and " var" are known as:',
+        choices: ['a. Keywords', 'b. Data types', 'c. Declaration statements', 'd. Prototypes'],
+        correctAnswer: 'c. Declaration statements'
+    },
+    {
+        question: 'Which of the following variables takes precedence over the others if the names are the same?',
+        choices: ['a. Global variable', 'b. The local element', 'c. The two of the above', 'd. None of the above'],
+        correctAnswer: 'b. The local element'
+    },
+    {
+        question: 'In the JavaScript, which one of the following is not considered as an error:',
+        choices: ['a. Syntax error', 'b. Missing of semicolons', 'c. Division by zero', 'd. Missing of Bracket'],
+        correctAnswer: 'c. Division by zero'
+    },
+];
