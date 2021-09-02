@@ -53,3 +53,42 @@ var questions = [
         correctAnswer: 'c. Division by zero'
     },
 ];
+
+
+startButton.addEventListener("click", startQuiz);
+
+function startQuiz() {
+    instructionPage.classList.add("hidden");
+    quizEndPage.classList.add("hidden");
+    questionContainer.classList.remove("hidden");
+    currentIndex = 0;
+    startTimer();
+    questionLoop();
+}
+
+var secondsLeft = 60;
+var timerInterval = 0;
+
+function startTimer() {
+    secondsLeft = 60;
+    timerInterval = setInterval(function () {
+        secondsLeft--;
+        timer.textContent = secondsLeft;
+
+        if (secondsLeft === 0) {
+            // Stops execution of action at set interval
+            clearInterval(timerInterval);
+            endGameScore.textContent = secondsLeft;
+            // question page hides, score screen appears
+            quizCompleted();
+        } 
+
+    }, 1000);
+
+}
+
+function resetTimer() {
+    clearInterval(timerInterval);
+    secondsLeft = 60;
+    timer.textContent = secondsLeft;
+}
