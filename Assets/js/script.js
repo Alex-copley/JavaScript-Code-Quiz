@@ -7,7 +7,21 @@ var nameInput = document.getElementById("initials");
 var timerDiv = document.getElementById("timer-div");
 var nameList = document.getElementById("nameList");
 
+var answerOne = document.getElementById("btn-1");
+var answerTwo = document.getElementById("btn-2");
+var answerThree = document.getElementById("btn-3");
+var answerFour = document.getElementById("btn-4");
 
+var answerCheck = document.getElementById("correct-wrong");
+
+var quizEndPage = document.getElementById("section-3");
+var submitBtn = document.getElementById("submitBtn");
+var endGameScore = document.getElementById("score");
+var highscorePage = document.getElementById("section-4");
+var viewHighscores = document.getElementById("viewHighscores");
+
+var goBackBtn = document.getElementById("goBack");
+var clearHighscores = document.getElementById("clear");
 
 var currentQ = '';
 var currentIndex = 0;
