@@ -54,6 +54,34 @@ var questions = [
     },
 ];
 
+viewHighscores.addEventListener("click", viewHighscoresPage);
+
+function viewHighscoresPage() {
+    instructionPage.classList.add("hidden");
+    quizEndPage.classList.add("hidden");
+    answerCheck.classList.add("hidden");
+    questionContainer.classList.add("hidden");
+    viewHighscores.classList.add("hidden");
+    timerDiv.classList.add("hidden");
+
+    highscorePage.classList.remove("hidden");
+
+    resetTimer();
+    showHighscores();
+}
+
+goBackBtn.addEventListener("click", goBack);
+
+function goBack() {
+    highscorePage.classList.add("hidden");
+    questionContainer.classList.add("hidden");
+    quizEndPage.classList.add("hidden");
+    instructionPage.classList.remove("hidden");
+    timerDiv.classList.remove("hidden");
+    viewHighscores.classList.remove("hidden");
+
+    resetTimer();
+}
 
 startButton.addEventListener("click", startQuiz);
 
@@ -91,35 +119,6 @@ function resetTimer() {
     clearInterval(timerInterval);
     secondsLeft = 60;
     timer.textContent = secondsLeft;
-}
-
-viewHighscores.addEventListener("click", viewHighscoresPage);
-
-function viewHighscoresPage() {
-    instructionPage.classList.add("hidden");
-    quizEndPage.classList.add("hidden");
-    answerCheck.classList.add("hidden");
-    questionContainer.classList.add("hidden");
-    viewHighscores.classList.add("hidden");
-    timerDiv.classList.add("hidden");
-
-    highscorePage.classList.remove("hidden");
-
-    resetTimer();
-    showHighscores();
-}
-
-goBackBtn.addEventListener("click", goBack);
-
-function goBack() {
-    highscorePage.classList.add("hidden");
-    questionContainer.classList.add("hidden");
-    quizEndPage.classList.add("hidden");
-    instructionPage.classList.remove("hidden");
-    timerDiv.classList.remove("hidden");
-    viewHighscores.classList.remove("hidden");
-
-    resetTimer();
 }
 
 function questionLoop() {
@@ -189,3 +188,73 @@ function quizCompleted() {
     timer.textContent = secondsLeft;
 
 }
+
+submitBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    viewHighscores.classList.add("hidden");
+    timerDiv.classList.add("hidden");
+
+
+    var highscoreArray = JSON.parse(localStorage.getItem("highscoreArray")) || [];
+    highscoreArray.sort((a, b) => parseFloat(b.score) - parseFloat(a.score));
+    localStorage.setItem('score', endGameScore.value);
+
+    if (nameInput.value === '') {
+        alert("You must enter your name to proceed.");
+        return;
+
+    };
+
+
+    var highscoreObject = {
+        name: nameInput.value,
+        score: secondsLeft
+    };
+
+    highscoreArray.push(highscoreObject);
+    localStorage.setItem('highscoreArray', JSON.stringify(highscoreArray))
+
+
+    console.log(highscoreArray);
+
+    showHighscores();
+
+    
+});
+
+function showHighscores() {
+    highscorePage.classList.remove("hidden");
+    quizEndPage.classList.add("hidden");
+
+    var highscoreArray = JSON.parse(localStorage.getItem("highscoreArray")) || [];
+    nameList.innerHTML = '';
+    highscoreArray.sort((a, b) => parseFloat(b.score) - parseFloat(a.score));
+    for (var i = 0; i < highscoreArray.length; i++) {
+        var listItem = document.createElement('li');
+        listItem.textContent = highscoreArray[i].name + ' - ' + highscoreArray[i].score;
+        nameList.appendChild(listItem);
+
+    }
+};
+
+// this function is being called below and will run when the page loads.
+function init() {
+    
+      // gets stored names from localstorage
+      var storedNames = JSON.parse(localStorage.getItem("highscoreArray"));
+
+      // if names were retrieved from localstorage, update the names array to it
+      if(storedNames !== null) {
+          highscoreArray = storedNames;
+      }
+
+clearHighscores.addEventListener("click", function(event) {
+    highscoreObject = {};
+    
+    window.localStorage.clear();
+    showHighscores();
+})
+}
+
+init();
