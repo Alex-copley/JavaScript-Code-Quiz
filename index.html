@@ -12,7 +12,8 @@
   
     <section class="whole-body">
       <div class="corner-div top-left">
-        <a href="highscore.html">View Highscores</a>                   </div>
+        <button id="viewHighscores" class="highscorebtn">View Highscores</button>                   
+      </div>
       
         <section class="center-body">
           <div id="section-1">
@@ -30,29 +31,41 @@
               <button id="btn-4" class="btn">[will be blank place holder for answer choice 4]</button>
             </div>
             <div class="section-2-ptags">
-              <p id="correct" class="section-2-ptag-margin hidden">Correct!</p>
-              <p id="wrong" class="section-2-ptag-margin hidden">Wrong!</p>
+              <div id="correct-wrong"></div>
             </div>
           </div>
           
           <div id="section-3" class="hidden">
             <h2>All Done!</h2>
               <div class="score-holder">
-                <p>Your final score is:</p> 
-                <p id="score">[place holder for final score]</p>
+                <p>Your final score is: </p> 
+                <p id="score"> </p>
               </div>
             <form>
               <label for="fname">Enter initials: </label>
               <input type="text" id="initials" name="initials">
-              <input type="submit" class="btn">
+              <input type="submit" class="btn" id="submitBtn">
             </form>
           </div>
+
+          <div class ="hidden" id="section-4">
+            <div id="highscores">
+                <h2>Highscores</h2>
+                <div>
+      
+                <ol class="highscore-ol" id="nameList"></ol>
+      
+                </div>
+                <button id="goBack" class="btn"><a id="goBackA">Go Back</a></button>
+                <button class="btn" id="clear">Clear Highscores</button>
+            </div>
+        </div>
         </section>
           
-          <div class="corner-div top-right">
+          <section id="timer-div" class="corner-div top-right">
             <div class="inline">Time Left: <div class="inline timer-count">60</div></div>
-          </div>
+          </section>
     </section>
-          
+
   </body>
 </html>

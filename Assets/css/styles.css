@@ -11,11 +11,24 @@ body {
 
 .center-body {
   margin: 0 auto;
-  display: block;
-  jusify-content: center;
+  display: flex;
+  justify-content: center;
   align-items: center;
   margin-top: 40px;
-  width: 600px;
+  width: 60%;
+}
+
+.highscorebtn {
+	background: none;
+	color: #4B0082;
+	border: none;
+	padding: 0;
+	font: inherit;
+	outline: inherit;
+}
+
+.highscorebtn:hover {
+  cursor: pointer;
 }
 
 h1 {
@@ -37,7 +50,7 @@ a {
   text-decoration: none;
 }
 
-.goBack {
+#goBackA {
   color: white;
   text-decoration: none;
 }
@@ -48,6 +61,7 @@ a {
   border: none;
   border-radius: 5px;
   padding: 5px;
+  text-align: left;
 }
 
 .btn:hover {
@@ -71,14 +85,7 @@ h2 {
   padding: 3px;
 }
 
-#correct {
-  font-size: 130%;
-  font-style: italic;
-  color: grey;
-  border-top: 4px solid lightgrey;
-}
-
-#wrong {
+#correct-wrong {
   font-size: 130%;
   font-style: italic;
   color: grey;
@@ -105,55 +112,15 @@ h2 {
 .highscore-ol li:nth-child(odd) {
   background-color: rgba(75,0,130, .2);
 }
-/* change from display: block, to display: none; to remove these indivually */
-#highscore-1 {
-  display: block;
-}
 
-#highscore-2 {
-  display: block;
-}
-
-#highscore-3 {
-  display: block; 
-}
-
-#highscore-4 {
-  display: block;
-}
-
-#highscore-5 {
-  display: block;
-}
-
-#highscore-6 {
-  display: none;
-}
-
-#highscore-7 {
-  display: none;
-}
-
-#highscore-8 {
-  display: none;
-}
-
-#highscore-9 {
-  display: none;
-}
-
-#highscore-10 {
-  display: none;
+#section-4 {
+  width: 60%;
 }
 
 #section-4 button {
   margin-right: 10px;
 }
 /* change from display: block, to display: none; to remove these corner items. */
-.corner-div {
-  display: block;
-}
-
 .top-right {
   margin: 0px;
 }
