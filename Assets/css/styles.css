@@ -76,7 +76,7 @@ a {
 }
 
 h2 {
-  margin-bottom: 10px;
+  margin-bottom: 1em;
 }
 
 .answers-btn button {
@@ -84,12 +84,13 @@ h2 {
   display: block;
   margin: 5px 0;
   padding: 5px;
+  white-space: nowrap;
 }
 
 #correct-wrong {
-  font-size: 130%;
+  font-size: 2rem;
   font-style: italic;
-  color: grey;
+  color: #5a5a5a;
   border-top: 4px solid lightgrey;
 }
 
@@ -122,10 +123,13 @@ h2 {
   margin-right: 10px;
 }
 
-.top-right {
-  margin: 0px;
+.timer-count {
+  text-align: center;
+  font-size: 2rem;
 }
 
-div .inline {
-  float: right;
+@media screen and (max-width: 667px) {
+  h2 {
+    font-size: 1.5rem;
+  }
 }

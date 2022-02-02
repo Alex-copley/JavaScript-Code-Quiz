@@ -111,7 +111,7 @@ function startTimer() {
             quizCompleted();
         }
 
-    }, 10000);
+    }, 1000);
 
 }
 
