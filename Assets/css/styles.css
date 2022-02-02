@@ -1,7 +1,7 @@
-/* for each option that has display: block; change display from block to none in js or the css file to hide the content */
-
 body {
   height: 100vh;
+  font-size: 1.5rem;
+  overflow: hidden;
 }
 
 .whole-body {
@@ -31,14 +31,13 @@ body {
   cursor: pointer;
 }
 
-h1 {
-  font-size: 200%;
-}
-
-/* change from display: block, to display: none; to remove this section. */
 #section-1 {
   justify-content: center;
   text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
 }
 
 .hidden {
@@ -55,13 +54,19 @@ a {
   text-decoration: none;
 }
 
+#section-1 .btn {
+  text-align: center;
+  font-size: 1.2rem;
+  width: 10em;
+  height: 2em;
+}
+
 .btn {
   background-color: #4B0082;
   color: white;
   border: none;
   border-radius: 5px;
-  padding: 5px;
-  text-align: left;
+  min-height: 2em;
 }
 
 .btn:hover {
@@ -69,20 +74,16 @@ a {
   transition: .1s ease-in-out 0s;
   transform: scale(1.05);
 }
-/* change from display: block, to display: none; to remove this section. */
 
 h2 {
   margin-bottom: 10px;
 }
 
 .answers-btn button {
-  color: white;
+  font-size: 1rem;
   display: block;
-  background-color: #4B0082;
-  border: none;
-  border-radius: 5px;
   margin: 5px 0;
-  padding: 3px;
+  padding: 5px;
 }
 
 #correct-wrong {
@@ -120,7 +121,7 @@ h2 {
 #section-4 button {
   margin-right: 10px;
 }
-/* change from display: block, to display: none; to remove these corner items. */
+
 .top-right {
   margin: 0px;
 }

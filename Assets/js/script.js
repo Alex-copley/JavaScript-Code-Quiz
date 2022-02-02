@@ -109,9 +109,9 @@ function startTimer() {
             endGameScore.textContent = secondsLeft;
             // question page hides, score screen appears
             quizCompleted();
-        } 
+        }
 
-    }, 1000);
+    }, 10000);
 
 }
 
@@ -178,7 +178,7 @@ function checkAnswer(e) {
 }
 
 function quizCompleted() {
-    nameInput.value="";
+    nameInput.value = "";
     answerCheck.classList.add("hidden");
     questionContainer.classList.add('hidden');
     highscorePage.classList.add("hidden");
@@ -200,7 +200,7 @@ submitBtn.addEventListener("click", function (e) {
     highscoreArray.sort((a, b) => parseFloat(b.score) - parseFloat(a.score));
     localStorage.setItem('score', endGameScore.value);
 
-    if (nameInput.value === '') {
+    if (nameInput.value == '') {
         alert("You must enter your name to proceed.");
         return;
 
@@ -220,7 +220,7 @@ submitBtn.addEventListener("click", function (e) {
 
     showHighscores();
 
-    
+
 });
 
 function showHighscores() {
@@ -240,21 +240,21 @@ function showHighscores() {
 
 // this function is being called below and will run when the page loads.
 function init() {
-    
-      // gets stored names from localstorage
-      var storedNames = JSON.parse(localStorage.getItem("highscoreArray"));
 
-      // if names were retrieved from localstorage, update the names array to it
-      if(storedNames !== null) {
-          highscoreArray = storedNames;
-      }
+    // gets stored names from localstorage
+    var storedNames = JSON.parse(localStorage.getItem("scoreArrahighy"));
 
-clearHighscores.addEventListener("click", function(event) {
-    highscoreObject = {};
-    
-    window.localStorage.clear();
-    showHighscores();
-})
+    // if names were retrieved from localstorage, update the names array to it
+    if (storedNames !== null) {
+        highscoreArray = storedNames;
+    }
+
+    clearHighscores.addEventListener("click", function (event) {
+        highscoreObject = {};
+
+        window.localStorage.clear();
+        showHighscores();
+    })
 }
 
 init();
