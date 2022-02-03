@@ -10,6 +10,6 @@ Provide a short description explaining the what, why, and how of your project. U
 5. copy git repo with SSH
 6. git pull (repo name)
 ## Website
-https://alex-copley.github.io/Web-APIs-Code-Quiz/
+https://alex-copley.github.io/JavaScript-Code-Quiz/
 ## Credits
 github.com/alex-copley
